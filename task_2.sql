@@ -23,14 +23,14 @@ CREATE TABLE IF NOT EXISTS "Customers" (
 );
 
 CREATE TABLE IF NOT EXISTS "Orders" (
-    "order_id" INT AUTO_INCREMENT PRIMARY KEY,
-    "customer_id" INT,
-    "order_date" DATE NOT NULL,
-    FOREIGN KEY ("customer_id") REFERENCES "Customers"("customer_id")
+    "order_id INT" AUTO_INCREMENT PRIMARY KEY,
+    "customer_id INT",
+    "order_date DATE" NOT NULL,
+    "FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)"
 );
 
 CREATE TABLE IF NOT EXISTS "Order_Details" (
-    "orderdetail_id" INT AUTO_INCREMENT PRIMARY KEY,
+    "orderdetail_id " INT AUTO_INCREMENT PRIMARY KEY,
     "order_id" INT,
     "book_id" INT,
     "quantity" DOUBLE,
