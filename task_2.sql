@@ -37,20 +37,3 @@ CREATE TABLE IF NOT EXISTS ORDER_DETAILS (
     FOREIGN KEY (ORDER_ID) REFERENCES ORDERS(ORDER_ID),
     FOREIGN KEY (BOOK_ID) REFERENCES BOOKS(BOOK_ID)
 );
-
-
-CREATE TABLE IF NOT EXISTS orders (
-    order_id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id INT,
-    order_date DATE NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
-);
-
-CREATE TABLE IF NOT EXISTS order_details (
-    orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
-    order_id INT,
-    book_id INT,
-    quantity DOUBLE,
-    FOREIGN KEY (order_id) REFERENCES orders(order_id),
-    FOREIGN KEY (book_id) REFERENCES books(book_id)
-);
